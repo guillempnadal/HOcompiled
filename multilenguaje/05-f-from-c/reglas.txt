@@ -1,0 +1,12 @@
+Primero tuve que modificar el archivo c-main.c: saqué la referencia al header de c-sum, porque no se usa, y declaré una nueva función sum_abs_, que es la subrutina de fortran y no retorna ningún valor (void); tuve que declarar una nueva variable entera (sum), que es el tercer parámetro de la función sum_abs_ (es el resultado de la función, por eso no aparece en la función de c); y finalmente, llamar a la función sum_abs_ para calcular la suma que queremos.
+
+Para compilar, escribí desde la mac
+
+clang -c c-main.c -o c-main.o
+gfortran -c f-sum.f90 -o f-sum.o
+
+para generar archivos binarios, que después linkeé y convertí en archivo ejecutable mediante el comando
+
+clang c-main.o f-sum.o -o c-main.e
+
+ 
