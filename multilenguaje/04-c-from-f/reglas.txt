@@ -1,0 +1,12 @@
+Primero tuve que modificar el archivo c-sum.c: le agregué guión bajo a la función sum_abs, porque el compilador de fortran automáticamente le agrega guión bajo a las funciones; todos los parámetros de la función los convertí en punteros, porque los datos que le pasa el programa de fortran son punteros; por último, incluí el resultado de la función (sum) entre los parámetros, porque eso es lo que hace el main de fortran.
+
+Para compilar, escribí lo siguiente (desde mi mac):
+
+gfortran -c f-main.f90 -o f-main.o
+clang -c c-sum.c -o c-sum.o
+
+Con eso me generé archivos escritos en binario, que finalmente linkeé y convertí en ejecutable con el comando
+
+gfortran f-main.o c-sum.o -o f-main.e
+
+
