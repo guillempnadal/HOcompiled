@@ -1,3 +1,5 @@
+Compilamos el objeto visibility.o, y después ejecutamos nm visibility.o. Nos aparecen los siguientes símbolos, que voy describiendo uno por uno.
+
 0000000000000000 t add_abs  
 
 En la posición 000... está definida la función add_abs, no accesible desde afuera.
@@ -6,7 +8,7 @@ En la posición 000... está definida la función add_abs, no accesible desde af
 
 En la posición ...0002a está la función main, accesible.
 
-                 U printf   
+(Sin posición de memoria) U printf   
 
 La función printf no está definida.
 
@@ -20,7 +22,7 @@ Val2 es una constante sí accesible desde fuera.
 
 0000000000000000 d val3 
 
-Val3 es unavariable no accesible desde afuera.
+Val3 es una variable no accesible desde afuera.
 
 0000000000000004 D val4
 
